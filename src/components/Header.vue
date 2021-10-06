@@ -1,7 +1,9 @@
 <template>
     <div class="header">
-        <input type="text" placeholder="Inserisci il titolo di un film">
-        <button>Cerca</button>
+            <!-- 1) 'search' nome evento che passo al padre, movie il valore del v-model, tramite il data agganciamo il v-model-->
+            <input type="text" placeholder="Inserisci il titolo di un film" v-model="movie">
+            <!-- $emit prende due paramentri: il primo è il nome dell'evento, il secondo il paramentro che passiamo -->
+            <button @click="$emit('search', movie)">Cerca</button>
     </div>
 </template>
 
@@ -9,7 +11,14 @@
 
 export default {
         name: 'Header',
-    }
+
+        data(){
+            // 2) In data devo salvare il valore della input (v-model="movie")
+            return{
+                movie: ""
+            }
+        }
+}
 
 </script>
 
