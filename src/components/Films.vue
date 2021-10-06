@@ -36,8 +36,11 @@ export default {
             padding: 30px 0 0 30px;
         }
         ul{
+            display: flex;
+            flex-wrap: wrap;
             li{
-                margin-top: 50px;
+                margin: 50px 30px 0 0;
+                list-style: none;
             }
         }
     }
