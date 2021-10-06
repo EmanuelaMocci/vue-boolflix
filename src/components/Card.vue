@@ -1,12 +1,11 @@
 <template>
     <!-- Stampiamo i dati interessati utilizzando la props, tramite la condizione stampo i dati relativi al film o alla serie tv -->
     <div class="card">
-        <h3 v-if="details.title">{{details.title}}</h3>
-        <h3 v-else>{{details.name}}</h3>
-<hr>
-        <h4>{{details.original_title ? details.original_title : details.original_name}}</h4>
-        <div><lang-flag :iso='details.original_language'/></div>
-        <div>{{details.vote_avarage}}</div>
+        <h3 v-if="details.title">Titolo: {{details.title}}</h3>
+        <h3 v-else> Titolo: {{details.name}}</h3>
+        <h4>Titolo originale: {{details.original_title ? details.original_title : details.original_name}}</h4>
+        <div>Lingua: <lang-flag :iso='details.original_language'/></div>
+        <div>Voto: {{details.vote_average}}</div>
     </div>
 </template>
 
@@ -21,3 +20,7 @@ export default {
     }
 }
 </script>
+
+<style lang="scss" scoped>
+
+</style>

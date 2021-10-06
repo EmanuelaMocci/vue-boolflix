@@ -1,5 +1,6 @@
 <template>
     <div class="movies-container">
+        <h2>Film:</h2>
         <ul>
             <li v-for="(film, index) in films" :key="index">
                 <!-- A card gli passo tutto l'oggettone che rappresenta il film -->
@@ -7,6 +8,7 @@
             </li>
         </ul>
 <hr>
+        <h2>Serie tv:</h2>
         <ul>
             <li v-for="(serie, index) in series" :key="index">
                 <!-- A card gli passo tutto l'oggettone che rappresenta la serie -->
@@ -29,5 +31,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+    .movies-container{
+        h2{
+            padding: 30px 0 0 30px;
+        }
+        ul{
+            li{
+                margin-top: 50px;
+            }
+        }
+    }
 </style>
