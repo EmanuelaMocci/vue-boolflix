@@ -32,8 +32,10 @@ export default {
 
 <style lang="scss" scoped>
     .movies-container{
+        // background-color: rgb(20, 20, 20);
         h2{
             padding: 30px 0 0 30px;
+            // color: lightgray;
         }
         ul{
             display: flex;

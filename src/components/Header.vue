@@ -1,7 +1,7 @@
 <template>
     <div class="header">
             <!-- 1) 'search' nome evento che passo al padre, movie il valore del v-model, tramite il data agganciamo il v-model-->
-            <input type="text" placeholder="Inserisci il titolo di un film" v-model="movie">
+            <input type="text" placeholder="Inserisci il titolo di un film " v-model="movie">
             <!-- $emit prende due paramentri: il primo è il nome dell'evento, il secondo il paramentro che passiamo -->
             <button @click="$emit('search', movie)">Cerca</button>
     </div>
@@ -26,7 +26,7 @@ export default {
 
 .header{
     height: 80px;
-    background-color: black;
+    background-color: rgb(20, 20, 20);
     display: flex;
     align-items: center;
     justify-content: flex-end;
