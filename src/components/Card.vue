@@ -6,7 +6,7 @@
         <h3 v-else> Titolo: {{details.name}}</h3>
         <h3>Titolo originale: {{details.original_title ? details.original_title : details.original_name}}</h3>
         <div>Lingua: <lang-flag :iso='details.original_language'/></div>
-        <div>Voto: {{details.vote_average.toFixed(0)/2}}</div>
+        <div>Voto: {{Math.round(details.vote_average/2)}}</div>
     </div>
 </template>
 
