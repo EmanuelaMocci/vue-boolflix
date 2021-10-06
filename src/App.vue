@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <!-- 4) Ora passo l'evento del figlio tramite $emit (search), quindi il nome dell'evento, searchMovie è il metodo 
-    non appne avie scatenato l'evento, rinago in ascolto del metodo searchMovie-->
+    non appena viene scatenato l'evento, rimango in ascolto del metodo searchMovie-->
     <Header @search="searchMovie"/>
-    <Films :films="films"/>
+    <Films :films="films" :series="series"/>
   </div>
 </template>
 
@@ -21,27 +21,41 @@ export default {
   data(){
     return{
       // 5) Creo un array vuoto dove salvare i dati
-      films: []
+      films: [],
+      series: []
     }
   },
   methods: {
     // 3) Richiamo la funzione con un paramentro search (può essere chiamato come si vuole)
     searchMovie(search){
       // Facciamo partire la chiamata qui perchè avviene dopo aver cliccato l'evento
-      axios.get('https://api.themoviedb.org/3/search/movie?api_key=e99307154c6dfb0b4750f6603256716d&query=ritorno+al+fut uro', {
+      axios.get('https://api.themoviedb.org/3/search/movie', {
         params: {
-          api_key: 'e99307154c6dfb0b4750f6603256716d',
+          api_key: 'aad62cbe2fe92d75516ca3bc33211c38',
           query: search,
           language: 'it-IT'
-      }
-    })
-    .then((response) => {
-      // 6) Salvare i dati results in movieSearched
-      this.films = response.data.results;
-    });
+        }
+      })
+      .then((response) => {
+        // 6) Salvo i dati results in films
+        this.films = response.data.results;
+      });
+
+      // Effettuo una nuova chiamata all'interno della funzione searchMovie per le serie tv
+      axios.get('https://api.themoviedb.org/3/search/tv', {
+        params: {
+          api_key: 'aad62cbe2fe92d75516ca3bc33211c38',
+          query: search,
+          language: 'it-IT'
+        }
+      })
+      .then((response) => {
+        // 6) Salvo i dati results in series
+        this.series = response.data.results;
+      });
     }
   }
-    }
+}
   
 </script>
 

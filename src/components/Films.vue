@@ -6,6 +6,13 @@
                 <Card :details="film"/>
             </li>
         </ul>
+<hr>
+        <ul>
+            <li v-for="(serie, index) in series" :key="index">
+                <!-- A card gli passo tutto l'oggettone che rappresenta la serie -->
+                <Card :details="serie"/>
+            </li>
+        </ul>
     </div>
 </template>
 
@@ -14,7 +21,7 @@ import Card from './Card.vue';
 
 export default {
     name: 'Films',
-    props: ['films'],
+    props: ['films', 'series'],
     components: {
         Card
     }
