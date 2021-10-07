@@ -87,7 +87,8 @@ export default {
         height: 20px;
         background-color: rgb(20, 20, 20);
         outline: none;
-        border-color: 3px solid rgb(207, 206, 206);
+        border: none;
+        // border-color: 3px solid rgb(207, 206, 206);
         transition: all .5s;
     }
     ::placeholder{
