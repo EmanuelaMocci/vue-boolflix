@@ -33,12 +33,26 @@
 
 <script>
 import Card from './Card.vue';
+import axios from 'axios';
 
 export default {
     name: 'Films',
     props: ['films', 'series', 'home'],
     components: {
         Card
+    },
+    created() {
+          // Effettuo una nuova chiamata per la home
+        axios.get('https://api.themoviedb.org/3/search/movie?api_key=dfb070b958255d617f646fa427b32530&language=it_IT&query=code', {
+        params: {
+          api_key: 'aad62cbe2fe92d75516ca3bc33211c38',
+          language: 'it-IT'
+        }
+      })
+      .then((response) => {
+        // 6) Salvo i dati results in home
+        this.home = response.data.results;
+      });
     }
 }
 </script>
