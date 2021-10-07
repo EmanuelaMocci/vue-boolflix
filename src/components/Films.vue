@@ -2,7 +2,14 @@
     <div class="movies-container">
         <div class="trailer">
             <section>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/iDvPvqImb-4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/Ne9wFo2aq3U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/iDvPvqImb-4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                <div class="dettagli-video">
+                    <img src="https://occ-0-2908-2774.1.nflxso.net/dnm/api/v6/tx1O544a9T7n8Z_G12qaboulQQE/AAAABbDPbGOaZ2jDzuKx0Qqz4AkcP6LopQGYezdUkfKGMXLtiOIiVdNvxH1oPi0GyWjpti0wySwGT6wQSTXe4mA04YwzGeI-vEZjBaFRG2ipM0EWZ7XI8ZyvpUfT2JnX4tYlpdgxkxZEfaLue_N3_Xlj9lDUWGtP4QuQW7os9jyaC7b5.webp?r=695" alt="">
+                    <div class="trama">In 1990s Berlin, an artist and a hacker invented a new way to see the world. Years later, they reunite to sue Google for patent infringement on it.</div>
+                    <button class="play"><i class="fas fa-play"></i> Play</button>
+                    <button class="info"><i class="fas fa-info"></i><span>More Info</span></button>
+                </div>
             </section>
         </div>
 
@@ -62,11 +69,50 @@ export default {
         background-color: rgb(20, 20, 20);
         .trailer{
             section{
+                position: relative;
                 display: flex;
                 justify-content: center;
                 iframe{
-                    width: 80%;
+                    width: 100%;
                     height: 700px;
+                }
+                .dettagli-video{
+                    position: absolute;
+                    left: 50px;
+                    bottom: 200px;
+                    width: 600px;
+                    .trama{
+                        color: white;
+                        font-size: 20px;
+                        font-family: 'Poppins', sans-serif;
+                        padding-top: 10px;
+                    }
+                    .play{
+                        background-color: white;
+                        border-radius: 5px;
+                        padding: 10px 25px;
+                        border: none;
+                        color: black;
+                        font-size: 18px;
+                        font-weight: bold;
+                        margin: 20px 10px 0 0;
+                        i{
+                            padding-right: 5px;
+                        }
+                    }
+                    .info{
+                        background-color: #7c7b7b;
+                        opacity: 0.8;
+                        border-radius: 5px;
+                        padding: 10px 25px;
+                        border: none;
+                        color: white;
+                        font-size: 18px;
+                        font-weight: bold;
+                        i{
+                            padding-right: 5px;
+                        }
+                    }
                 }
             }
         }
