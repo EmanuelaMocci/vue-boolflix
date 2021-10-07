@@ -1,11 +1,14 @@
 <template>
     <!-- Stampiamo i dati interessati utilizzando la props, tramite la condizione stampo i dati relativi al film o alla serie tv -->
     <div class="card">
-        <!-- Se null non viene eseguito -->
-        <img v-if="details.poster_path" :src= "`https://image.tmdb.org/t/p/w500/${details.poster_path}`">
-        <!-- Se è presente dtails.title allora stampo details.title altrimenti stampo details.name-->
+        <!-- Se null non viene eseguito --> 
+        <img v-if="details.poster_path" :src= "`https://image.tmdb.org/t/p/w342/${details.poster_path}`">
+        <img v-else :src= "`https://d1csarkz8obe9u.cloudfront.net/posterpreviews/netflix-movie-series-template-design-e71bfb50a083bc6cb974024bb0bca100_screen.jpg?ts=1605596553`">
+
+        <!-- Se è presente details.title allora stampo details.title altrimenti stampo details.name-->
         <h3 v-if="details.title">Titolo: {{details.title}}</h3>
         <h3 v-else> Titolo:{{details.name}}</h3>
+        <!-- Oppure <h3>{{details.title || details.name}}</h3> -->
         
         <!-- Se è presente dtails.original_title allora stampo details.original_title altrimenti stampo details.original_name-->
         <h3>Titolo originale: {{details.original_title ? details.original_title : details.original_name}}</h3>
