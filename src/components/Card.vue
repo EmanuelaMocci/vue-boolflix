@@ -1,7 +1,7 @@
 <template>
     <!-- Stampiamo i dati interessati utilizzando la props, tramite la condizione stampo i dati relativi al film o alla serie tv -->
     <div class="card">
-        <!-- Se null non viene eseguito --> 
+
         <img v-if="details.poster_path" :src= "`https://image.tmdb.org/t/p/w342/${details.poster_path}`">
         <img v-else :src= "`https://d1csarkz8obe9u.cloudfront.net/posterpreviews/netflix-movie-series-template-design-e71bfb50a083bc6cb974024bb0bca100_screen.jpg?ts=1605596553`">
 
@@ -40,13 +40,22 @@ export default {
     width: 300px;
     img{
         width: 300px;
+        height: 450px;
+        object-fit: cover;
+        object-position: center;
     }
     i{
         color: rgb(255, 238, 0);
     }
-    // h3{
-    //     color: lightgray;
-    // }
+    h3{
+        color: lightgray;
+        font-family: 'Poppins', sans-serif;
+
+    }
+    div{
+        font-family: 'Poppins', sans-serif;
+
+    }
 }
 
 </style>
