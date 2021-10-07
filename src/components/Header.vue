@@ -88,6 +88,9 @@ export default {
         }
     }
     .input{
+        input[type=text]{
+        border: 1px solid white;
+        }
         input{
             padding: 10px;
             width: 200px;
@@ -110,15 +113,16 @@ export default {
             border: 1px solid rgb(207, 206, 206);
         }
         button{
-            padding: 10px;
-            height: 44px;
+            padding: 0 10px;
+            height: 42px;
             background-color: rgb(20, 20, 20);
             color: rgb(207, 206, 206);
             border: 1px solid rgb(207, 206, 206);
         }
         i{
+            font-size: 15px;
             padding: 0 15px;
-            color: rgb(207, 206, 206);
+            color: white;
         }
         img{
             width: 35px;

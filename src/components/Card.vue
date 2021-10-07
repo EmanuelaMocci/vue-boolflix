@@ -8,7 +8,7 @@
         <div class="testo-img">
             <!-- Se è presente details.title allora stampo details.title altrimenti stampo details.name-->
             <h3 v-if="details.title">Titolo: {{details.title}}</h3>
-            <h3 v-else> Titolo:{{details.name}}</h3>
+            <h3 v-else> Titolo: {{details.name}}</h3>
             <!-- Oppure <h3>{{details.title || details.name}}</h3> -->
             
             <!-- Se è presente dtails.original_title allora stampo details.original_title altrimenti stampo details.original_name-->
