@@ -6,6 +6,13 @@
             </section>
         </div>
 
+        <ul>
+            <li v-for="(home, index) in home" :key="index">
+                <!-- A card gli passo tutto l'oggettone che rappresenta il film  nella home-->
+                <Card :details="home"/>
+            </li>
+        </ul>
+
         <h2>Film:</h2>
         <ul>
             <li v-for="(film, index) in films" :key="index">
@@ -29,7 +36,7 @@ import Card from './Card.vue';
 
 export default {
     name: 'Films',
-    props: ['films', 'series'],
+    props: ['films', 'series', 'home'],
     components: {
         Card
     }

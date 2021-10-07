@@ -3,7 +3,7 @@
     <!-- 4) Ora passo l'evento del figlio tramite $emit (search), quindi il nome dell'evento, searchMovie è il metodo 
     non appena viene scatenato l'evento, rimango in ascolto del metodo searchMovie-->
     <Header @search="searchMovie"/>
-    <Films :films="films" :series="series"/>
+    <Films :films="films" :series="series" :home="home"/>
   </div>
 </template>
 
@@ -22,7 +22,8 @@ export default {
     return{
       // 5) Creo un array vuoto dove salvare i dati
       films: [],
-      series: []
+      series: [], 
+      home: []
     }
   },
   methods: {
@@ -52,6 +53,18 @@ export default {
       .then((response) => {
         // 6) Salvo i dati results in series
         this.series = response.data.results;
+      });
+
+      // Effettuo una nuova chiamata per la home
+      axios.get('https://api.themoviedb.org/3/search/movie?api_key=dfb070b958255d617f646fa427b32530&language=it_IT&query=love', {
+        params: {
+          api_key: 'aad62cbe2fe92d75516ca3bc33211c38',
+          language: 'it-IT'
+        }
+      })
+      .then((response) => {
+        // 6) Salvo i dati results in home
+        this.home = response.data.results;
       });
     }
   }

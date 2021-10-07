@@ -43,8 +43,7 @@ export default {
 
 <style lang="scss" scoped>
 .card:hover img{
-    background-color: white;
-    display: block;
+    opacity: 0.2;
 }
 .card{
     width: 300px;
@@ -76,11 +75,11 @@ export default {
         color: rgb(255, 238, 0);
         }
         h3{
-            color: lightgray;
+            color: rgb(233, 233, 233);
             font-family: 'Poppins', sans-serif;
         }
         div{
-            color: lightgray;
+            color: rgb(233, 233, 233);
             font-family: 'Poppins', sans-serif;
         }
     }
