@@ -78,6 +78,9 @@ export default {
                     font-weight: 300;
                     font-size: 13px;
                 }
+                a:hover{
+                    color: white;
+                }
             }
         }
         img{

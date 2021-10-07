@@ -8,17 +8,19 @@
                     <img src="https://occ-0-2908-2774.1.nflxso.net/dnm/api/v6/tx1O544a9T7n8Z_G12qaboulQQE/AAAABbDPbGOaZ2jDzuKx0Qqz4AkcP6LopQGYezdUkfKGMXLtiOIiVdNvxH1oPi0GyWjpti0wySwGT6wQSTXe4mA04YwzGeI-vEZjBaFRG2ipM0EWZ7XI8ZyvpUfT2JnX4tYlpdgxkxZEfaLue_N3_Xlj9lDUWGtP4QuQW7os9jyaC7b5.webp?r=695" alt="">
                     <div class="trama">In 1990s Berlin, an artist and a hacker invented a new way to see the world. Years later, they reunite to sue Google for patent infringement on it.</div>
                     <button class="play"><i class="fas fa-play"></i> Play</button>
-                    <button class="info"><i class="fas fa-info"></i><span>More Info</span></button>
+                    <button class="info"><span class="circle">i</span> <span>More Info</span></button>
                 </div>
             </section>
         </div>
 
+       
         <ul>
             <li v-for="(home, index) in home" :key="index">
                 <!-- A card gli passo tutto l'oggettone che rappresenta il film  nella home-->
                 <Card :details="home"/>
             </li>
         </ul>
+        
 
         <h2>Film:</h2>
         <ul>
@@ -90,12 +92,13 @@ export default {
                     .play{
                         background-color: white;
                         border-radius: 5px;
-                        padding: 10px 25px;
+                        padding: 12px 27px;
                         border: none;
                         color: black;
                         font-size: 18px;
                         font-weight: bold;
                         margin: 20px 10px 0 0;
+                        cursor: pointer;
                         i{
                             padding-right: 5px;
                         }
@@ -104,15 +107,25 @@ export default {
                         background-color: #7c7b7b;
                         opacity: 0.8;
                         border-radius: 5px;
-                        padding: 10px 25px;
+                        padding: 12px 27px;
                         border: none;
                         color: white;
                         font-size: 18px;
                         font-weight: bold;
-                        i{
-                            padding-right: 5px;
+                        cursor: pointer;
+                        .circle{
+                            padding: 0 7px;
+                            border: 3px solid white;
+                            border-radius: 50%;
+                            margin-right: 8px;
                         }
                     }
+                }
+                .dettagli-video .play:hover{
+                    opacity: 0.7;
+                }
+                .dettagli-video .info:hover{
+                    opacity: 0.6;
                 }
             }
         }
@@ -126,6 +139,12 @@ export default {
             li{
                 margin: 50px 30px 0 0;
                 list-style: none;
+            }
+        }
+        .lista-home{
+            h3{
+                color: rgb(233, 233, 233);
+                font-family: 'Poppins', sans-serif;
             }
         }
     }
