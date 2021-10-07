@@ -24,11 +24,14 @@
             </ul>
         </div>
 
-        <div class="div">
+        <div class="input">
             <!-- 1) 'search' nome evento che passo al padre, movie il valore del v-model, tramite il data agganciamo il v-model-->
             <input type="text" placeholder="Inserisci il titolo di un film " v-model="movie">
             <!-- $emit prende due paramentri: il primo è il nome dell'evento, il secondo il paramentro che passiamo -->
-            <button @click.prevent="$emit('search', movie)">Cerca</button>
+            <button @click.prevent="$emit('search', movie)"><i class="fas fa-search"></i></button>
+            <i class="fas fa-bell"></i>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" alt="avatar netflix">
+            <i class="fas fa-caret-down"></i>
         </div>
     </div>
 </template>
@@ -81,30 +84,44 @@ export default {
             width: 120px;
         }
     }
-    input{
-        padding: 10px;
-        width: 200px;
-        height: 20px;
-        background-color: rgb(20, 20, 20);
-        outline: none;
-        border: none;
-        // border-color: 3px solid rgb(207, 206, 206);
-        transition: all .5s;
-    }
-    ::placeholder{
+    .input{
+        input{
+            padding: 10px;
+            width: 200px;
+            height: 20px;
+            background-color: rgb(20, 20, 20);
+            outline: none;
+            border: none;
+            transition: all .5s;
+        }
+        ::placeholder{
+                color: rgb(207, 206, 206);
+        }
+        textarea:focus, input:focus {
             color: rgb(207, 206, 206);
-    }
-    textarea:focus, input:focus {
-    color: rgb(207, 206, 206);
-    }
-    input:focus {
-    width: 300px;
-    top: 0;
-    right: 100%;
-}
-    button{
-        padding: 10px;
-        height: 44px;
+        }
+        input:focus {
+            width: 300px;
+            top: 0;
+            right: 100%;
+            border: 1px solid rgb(207, 206, 206);
+        }
+        button{
+            padding: 10px;
+            height: 44px;
+            background-color: rgb(20, 20, 20);
+            color: rgb(207, 206, 206);
+            border: 1px solid rgb(207, 206, 206);
+        }
+        i{
+            padding: 0 15px;
+            color: rgb(207, 206, 206);
+        }
+        img{
+            width: 35px;
+            vertical-align: middle;
+            border-radius: 5px;
+        }
     }
 }
 
