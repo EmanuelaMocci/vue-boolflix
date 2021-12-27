@@ -67,6 +67,7 @@ export default {
         span{
             font-size: 13px;
         }
+        padding: 10px 10px 10px 0;
     }
 }
 .card:hover .testo-img{

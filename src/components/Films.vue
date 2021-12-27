@@ -2,7 +2,7 @@
     <div class="movies-container">
         <div class="trailer">
             <section>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/Ne9wFo2aq3U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; allow='autoplay'; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/2cOzXxfuwqM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 <div class="dettagli-video">
                     <img src="https://occ-0-2908-2774.1.nflxso.net/dnm/api/v6/tx1O544a9T7n8Z_G12qaboulQQE/AAAABbDPbGOaZ2jDzuKx0Qqz4AkcP6LopQGYezdUkfKGMXLtiOIiVdNvxH1oPi0GyWjpti0wySwGT6wQSTXe4mA04YwzGeI-vEZjBaFRG2ipM0EWZ7XI8ZyvpUfT2JnX4tYlpdgxkxZEfaLue_N3_Xlj9lDUWGtP4QuQW7os9jyaC7b5.webp?r=695" alt="">
                     <div class="trama">In 1990s Berlin, an artist and a hacker invented a new way to see the world. Years later, they reunite to sue Google for patent infringement on it.</div>
@@ -20,7 +20,6 @@
             </li>
         </ul>
         
-
         <h2>Film:</h2>
         <ul>
             <li v-for="(film, index) in films" :key="index">
@@ -28,7 +27,7 @@
                 <Card :details="film"/>
             </li>
         </ul>
-
+       
         <h2>Serie tv:</h2>
         <ul>
             <li v-for="(serie, index) in series" :key="index">
@@ -77,7 +76,7 @@ export default {
                 }
                 .dettagli-video{
                     position: absolute;
-                    left: 50px;
+                    left: 100px;
                     bottom: 150px;
                     width: 600px;
                     .trama{
@@ -135,7 +134,7 @@ export default {
             display: flex;
             flex-wrap: wrap;
             li{
-                margin: 50px 30px 0 0;
+                margin: 50px 30px 50px 0;
                 list-style: none;
             }
         }

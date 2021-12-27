@@ -22,8 +22,7 @@ export default {
     return{
       // 5) Creo un array vuoto dove salvare i dati
       films: [],
-      series: [], 
-      home: []
+      series: []
     }
   },
   methods: {
